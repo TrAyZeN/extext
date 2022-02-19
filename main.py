@@ -13,6 +13,10 @@ import pytesseract
 
 import pyperclip
 
+from arguments import parse_args
+
+args = parse_args()
+
 app = QApplication(sys.argv)
 app.setApplicationName("salut")
 app.setApplicationDisplayName("salut")
@@ -45,8 +49,10 @@ class Window(QLabel):
         selection_area = self.rubberBand.geometry().getCoords()
         cropped_screenshot = screenshot.crop(selection_area)
         text = pytesseract.image_to_string(cropped_screenshot)
-        pyperclip.copy(text)
-        print(text)
+        if not args.quiet:
+            print(text)
+        if args.clipboard:
+            pyperclip.copy(text)
         self.close()
         #  app.exit()
 
