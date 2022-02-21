@@ -2,9 +2,9 @@ from PyQt5.QtWidgets import QApplication
 from PIL import ImageGrab
 import sys
 import pytesseract
-from mainwindow import MainWindow
+from extext.mainwindow import MainWindow
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     app.setApplicationName("extext")
     app.setApplicationDisplayName("extext")
@@ -14,3 +14,5 @@ if __name__ == "__main__":
     window.showFullScreen()
 
     app.exec_()
+
+main()

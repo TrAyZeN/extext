@@ -1,10 +1,11 @@
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 from PIL.ImageQt import ImageQt
 
 import pyperclip
 
-from selectablewindow import SelectableWindow
-from arguments import parse_args
+from extext.selectablewindow import SelectableWindow
+from extext.arguments import parse_args
 
 class MainWindow(SelectableWindow):
     """Create a new MainWindow
